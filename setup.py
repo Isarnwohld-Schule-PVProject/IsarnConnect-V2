@@ -10,12 +10,5 @@ setup(
         'psycopg2>=2.9.9',
         'sqlalchemy>=2.0.27',
     ],
-    long_description=r"""
-IsarnConncet
-==========
-
-This is a description of my package.
-
-The interface to store and retrieve the data from the meters. For example, to evaluate this data.
-"""
+    long_description=open('README.md', 'r').read(),
 )
