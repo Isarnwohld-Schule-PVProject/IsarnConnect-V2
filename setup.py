@@ -10,5 +10,5 @@ setup(
         'psycopg2>=2.9.9',
         'sqlalchemy>=2.0.27',
     ],
-    long_description=''
+    long_description='IsarnConnect is the interface between the database and the user.'
 )
