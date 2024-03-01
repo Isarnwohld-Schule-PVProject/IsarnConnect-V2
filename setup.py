@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='IsarnConnect-V2',
+    name='IsarnConnect',
     version='0.1',
     author='C0MaE',
     author_email='jannis.koberg@icloud.com',
