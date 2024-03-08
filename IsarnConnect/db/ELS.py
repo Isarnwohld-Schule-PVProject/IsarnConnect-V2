@@ -37,5 +37,5 @@ class ELS(Base):
 
     def toRow(self):
         return Row.ELS(c091=self.c091, c092=self.c092, c010=self.c010, c120=self.c120, c150=self.c150, c160=self.c160,
-                       c220=self.c220, c250=self.c250, c260=self.c260, c180=self.c180, c280=self.c280, c580=self.c580,
+                       c220=self.c220, c250=self.c250, c260=self.c260, c180=self.c180*60, c280=self.c280*60, c580=self.c580,
                        c680=self.c680, c780=self.c780, c880=self.c880, c030=self.c030, c033=self.c033)
