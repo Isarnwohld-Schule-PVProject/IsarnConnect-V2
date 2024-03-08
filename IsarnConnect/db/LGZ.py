@@ -41,6 +41,6 @@ class LGZ(Base):
 
     def toRow(self):
         return Row.LGZ(c091=self.c091, c092=self.c092, c010=self.c010, c150=self.c150, c160=self.c160,
-                       c180=self.c180, c250=self.c250, c260=self.c260, c280=self.c280, c580=self.c580,
+                       c180=self.c180*50, c250=self.c250, c260=self.c260, c280=self.c280*50, c580=self.c580,
                        c680=self.c680, c780=self.c780, c880=self.c880, c021=self.c021, c2700=self.c2700,
                        c2701=self.c2701, c2702=self.c2702, c512=self.c512)
