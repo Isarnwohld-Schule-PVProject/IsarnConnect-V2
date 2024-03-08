@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='IsarnConnect',
-    version='0.5',
+    version='0.7',
     author='C0MaE',
     author_email='jannis.koberg@icloud.com',
     packages=find_packages(),
