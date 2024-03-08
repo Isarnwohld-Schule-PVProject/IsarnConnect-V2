@@ -98,12 +98,10 @@ class IsarnConnection:
             items = session.query(SLB).filter(condition).order_by(SLB.c092, SLB.c091).all()
             return tableRowToRowArray(items, Meter.SLB)
 
-    def getBetweenDate(self, from_date: datetime, to_date: datetime, meter: Meter):
+    def getBetweenDatetime(self, from_date: datetime, to_date: datetime, meter: Meter):
         session = self.session()
         from_date_code = float(from_date.strftime("%Y%m%d")[2:] + "" + from_date.strftime("%H%M%S"))
         to_date_code = float(to_date.strftime("%Y%m%d")[2:] + "" + to_date.strftime("%H%M%S"))
-        from_time_code = float(from_date.strftime("%H%M%S"))
-        to_time_code = float(to_date.strftime("%H%M%S"))
         if meter.value == "els":
             items = (session
                      .query(ELS).filter((ELS.c092 * 1000000 + ELS.c091).between(from_date_code, to_date_code))
@@ -112,16 +110,14 @@ class IsarnConnection:
             return tableRowToRowArray(items, Meter.ELS)
         elif meter.value == "lgz":
             items = (session
-                     .query(LGZ)
-                     .filter(LGZ.c092.between(from_date_code, to_date_code))
-                     .order_by(LGZ.c092, LGZ.c091)
+                     .query(LGZ).filter((ELS.c092 * 1000000 + ELS.c091).between(from_date_code, to_date_code))
+                     .order_by(ELS.c092, ELS.c091)
                      .all())
             return tableRowToRowArray(items, Meter.LGZ)
         elif meter.value == "slb":
             items = (session
-                     .query(SLB)
-                     .filter(SLB.c092.between(from_date_code, to_date_code))
-                     .order_by(SLB.c092, SLB.c091)
+                     .query(SLB).filter((ELS.c092 * 1000000 + ELS.c091).between(from_date_code, to_date_code))
+                     .order_by(ELS.c092, ELS.c091)
                      .all())
             return tableRowToRowArray(items, Meter.SLB)
 
