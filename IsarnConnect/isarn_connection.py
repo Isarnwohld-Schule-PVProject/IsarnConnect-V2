@@ -164,15 +164,23 @@ class IsarnConnection:
                     .order_by(ELS.c092, ELS.c091)
                     .all())
         itemsELSDF = DataFrame(tableRowToRowArray(itemsELS, Meter.ELS))
-        elsUse = itemsELSDF.iloc[-1][0].c180 - itemsELSDF.iloc[0][0].c180
+        elsUse = 0
+        if not itemsELSDF.empty:
+            elsUse = itemsELSDF.iloc[-1][0].c180 - itemsELSDF.iloc[0][0].c180
         itemsLGZ = (session
                     .query(LGZ).filter((LGZ.c092 * 1000000 + LGZ.c091).between(from_date_code, to_date_code))
                     .order_by(LGZ.c092, LGZ.c091)
                     .all())
         itemsLGZDF = DataFrame(tableRowToRowArray(itemsLGZ, Meter.LGZ))
+        lgzuse = 0
+        if not itemsLGZDF.empty:
+            lgzuse = itemsLGZDF.iloc[-1][0].c180 - itemsLGZDF.iloc[0][0].c180
         itemsSLB = (session
                     .query(SLB).filter((SLB.c092 * 1000000 + SLB.c091).between(from_date_code, to_date_code))
                     .order_by(SLB.c092, SLB.c091)
                     .all())
         itemsSLBDF = DataFrame(tableRowToRowArray(itemsSLB, Meter.SLB))
-        return elsUse + 0 + 0
+        slbuse = 0
+        if not itemsSLBDF.empty:
+            slbuse = itemsSLBDF.iloc[-1][0].c180 - itemsSLBDF.iloc[0][0].c180
+        return elsUse + lgzuse + slbuse
