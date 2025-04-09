@@ -73,12 +73,24 @@ def csvToRowArray(path, meter: Meter):
         elif meter.value == "lgz":
             for row in reader:
                 array_row = Row.LGZ(c091=float(row['0.9.1']), c092=float(row['0.9.2']), c010=float(row['0.1.0']),
-                                    c150=float(row['1.5.0']), c160=float(row['1.6.0']), c180=float(row['1.8.0']),
-                                    c250=float(row['2.5.0']), c260=float(row['2.6.0']), c280=float(row['2.8.0']),
-                                    c580=float(row['5.8.0']), c680=float(row['6.8.0']), c780=float(row['7.8.0']),
-                                    c880=float(row['8.8.0']), c021=float(row['0.2.1']), c2700=float(row['2.7.0']),
-                                    c2701=float(row['2.7.0']), c2702=float(row['2.7.0']), c1700=float(row['1.7.0']),
-                                    c1701=float(row['1.7.0']), c1702=float(row['1.7.0']), c512=float(row['5.1.2']))
+                                    c150=float(row['1.5.0'].replace("*kW", "")),
+                                    c160=float(row['1.6.0'].replace("*kW", "")),
+                                    c180=float(row['1.8.0'].replace("*kWh", "")),
+                                    c250=float(row['2.5.0'].replace("*kW", "")),
+                                    c260=float(row['2.6.0'].replace("*kW", "")),
+                                    c280=float(row['2.8.0'].replace("*kWh", "")),
+                                    c580=float(row['5.8.0'].replace("*kvarh", "")),
+                                    c680=float(row['6.8.0'].replace("*kvarh", "")),
+                                    c780=float(row['7.8.0'].replace("*kvarh", "")),
+                                    c880=float(row['8.8.0'].replace("*kvarh", "")),
+                                    c021=float(row['0.2.1']),
+                                    c2700=float(row['2.7.0'].replace("*V", "")),
+                                    c2701=float(row['2.7.0'].replace("*V", "")),
+                                    c2702=float(row['2.7.0'].replace("*V", "")),
+                                    c1700=float(row['1.7.0'].replace("*A", "")),
+                                    c1701=float(row['1.7.0'].replace("*A", "")),
+                                    c1702=float(row['1.7.0'].replace("*A", "")),
+                                    c512=float(row['5.1.2'].replace("*kW", "")))
                 array.append(array_row)
             return array
         elif meter.value == "slb":
