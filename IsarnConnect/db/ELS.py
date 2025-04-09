@@ -9,7 +9,7 @@ Base = declarative_base()
 
 class ELS(Base):
     __tablename__ = 'ELS_data'
-    __table_args__ = {'schema': 'test'} # TODO reorganize Development Stage!
+    __table_args__ = {'schema': 'test'}
     id = mapped_column("id", Integer, autoincrement=True, primary_key=True)
     c091 = mapped_column("0.9.1", Double)
     c092 = mapped_column("0.9.2", Double)
