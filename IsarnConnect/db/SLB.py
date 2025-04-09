@@ -9,7 +9,7 @@ Base = declarative_base()
 
 class SLB(Base):
     __tablename__ = 'SLB_data'
-    __table_args__ = {'schema': 'test'}
+    __table_args__ = {'schema': 'test'} # TODO reorganize Development Stage!
     id = mapped_column("id", Integer, autoincrement=True, primary_key=True)
     c000 = mapped_column("0.0.0", Double)
     c001 = mapped_column("0.0.1", Double)
