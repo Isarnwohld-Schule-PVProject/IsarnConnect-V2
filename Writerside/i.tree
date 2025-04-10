@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="i"
+                 name="IsarnConnectDocs"
+                 start-page="Installation.md">
+
+    <toc-element topic="starter-topic.md"/>
+    <toc-element topic="Installation.md"/>
+    <toc-element topic="Enums.md">
+        <toc-element topic="Meter.md"/>
+    </toc-element>
+    <toc-element topic="Objects.md">
+        <toc-element topic="Row.md"/>
+        <toc-element topic="RowArray.md"/>
+    </toc-element>
+    <toc-element topic="Database-Methods.md">
+        <toc-element topic="commitOnly.md"/>
+        <toc-element topic="getLatest.md"/>
+        <toc-element topic="getBetweenTime.md"/>
+        <toc-element topic="getBetweenDate.md"/>
+        <toc-element topic="getByTime.md"/>
+        <toc-element topic="getByDate.md"/>
+        <toc-element topic="commitAll.md"/>
+    </toc-element>
+    <toc-element topic="General-Methods.md">
+        <toc-element topic="csvToRowArray.md"/>
+        <toc-element topic="ablToRow.md"/>
+    </toc-element>
+</instance-profile>
