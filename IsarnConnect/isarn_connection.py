@@ -91,18 +91,18 @@ class IsarnConnection:
     def getByDateTime(self, datetime: datetime, meter: Meter):
         session = self.session()
         condition = (
-                (ELS.c092.between(190919, 190920)) &
-                (ELS.c091.between(1, 235959))
+                (ELS.c092 == 190918) &
+                (ELS.c091 == 115759)
         )
         if meter.value == "els":
-            items = session.query(ELS).filter(condition).order_by(ELS.c092, ELS.c091).all()
-            return tableRowToRowArray(items, Meter.ELS)
+            item = session.query(ELS).filter(condition).order_by(ELS.c092, ELS.c091).first()
+            return item.toRow()
         elif meter.value == "lgz":
-            items = session.query(LGZ).filter(condition).order_by(LGZ.c092, LGZ.c091).all()
-            return tableRowToRowArray(items, Meter.LGZ)
+            item = session.query(LGZ).filter(condition).order_by(LGZ.c092, LGZ.c091).first()
+            return item.toRow()
         elif meter.value == "slb":
-            items = session.query(SLB).filter(condition).order_by(SLB.c092, SLB.c091).all()
-            return tableRowToRowArray(items, Meter.SLB)
+            item = session.query(SLB).filter(condition).order_by(SLB.c092, SLB.c091).first()
+            return item.toRow()
 
     def getBetweenDatetime(self, from_date: datetime, to_date: datetime, meter: Meter):
         session = self.session()

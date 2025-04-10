@@ -17,7 +17,6 @@ def ablToRow(path):
         readfile = file.read()
         datalist = []
 
-        # liest die codes und die werte aus
         while re.search("\d\.\d\.\d\(\d+\.?\d*(\*[a-zA-Z]*)?\)", readfile):
             span = re.search("\d\.\d\.\d\(\d+\.?\d*(\*[a-zA-Z]*)?\)", readfile).span()
             match = re.search("\d\.\d\.\d\(\d+\.?\d*(\*[a-zA-Z]*)?\)", readfile).group()
