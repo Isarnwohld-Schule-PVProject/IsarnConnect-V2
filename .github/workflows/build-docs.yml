@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  INSTANCE: 'Writerside/IsarnConnectDocs'
+  INSTANCE: 'Writerside/i'
   DOCKER_VERSION: '2025.04.8412'
   # IS_GROUP: 'true'  # Uncomment to build a group
 
