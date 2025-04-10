@@ -4,7 +4,7 @@
 
 <instance-profile id="i"
                  name="IsarnConnectDocs"
-                 start-page="starter-topic.md">
+                 start-page="Installation.md">
 
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="Installation.md"/>
