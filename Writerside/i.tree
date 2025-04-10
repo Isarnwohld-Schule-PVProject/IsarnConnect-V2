@@ -9,6 +9,7 @@
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="Installation.md"/>
     <toc-element topic="Enums.md">
+        <toc-element topic="DatabaseType.md"/>
         <toc-element topic="Meter.md"/>
     </toc-element>
     <toc-element topic="Objects.md">
