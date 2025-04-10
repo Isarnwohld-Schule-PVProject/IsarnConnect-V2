@@ -37,9 +37,9 @@ As an example, let us take the date of a row.
 <td>
 <code-block lang="python">
 row = ablToRow("example.com")
-<br/>
+
 date = row.c092
-<br/>
+
 print(date)
 </code-block>
 </td>
