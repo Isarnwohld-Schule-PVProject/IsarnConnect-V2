@@ -1,3 +1,5 @@
+from IsarnConnect.DatabaseType import DatabaseType
+
 # Installation
 
 IsarnConnect was developed with the latest version of Python.
@@ -12,7 +14,7 @@ You can easily implement IsarnConnect in your Main method by importing the Isarn
 from isarn_connection import IsarnConnection
 
 isarn = IsarnConnection("%password", "%username", "%address", 
-                             "%port", "%database")
+                             "%port", "%database", DatabaseType.POSTGRE)
 ```
 
 To make sure that no errors occur, it is recommended to call the `connect` function before sending or receiving data.
